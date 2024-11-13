@@ -20,11 +20,18 @@ export default [
   {
     ignores: ['**/node_modules', '**/build']
   },
-  ...fixupConfigRules(compat.extends('eslint:recommended', 'plugin:prettier/recommended', 'plugin:import/errors', 'plugin:import/warnings')),
+  ...fixupConfigRules(
+    compat.extends(
+      'eslint:recommended',
+      'plugin:import/errors',
+      'plugin:import/warnings',
+      'plugin:prettier/recommended'
+    )
+  ),
   {
     plugins: {
-      prettier: fixupPluginRules(prettier),
-      import: fixupPluginRules(_import)
+      import: fixupPluginRules(_import),
+      prettier: fixupPluginRules(prettier)
     },
 
     languageOptions: {
@@ -57,7 +64,14 @@ export default [
       'import/order': [
         2,
         {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index'
+          ],
           'newlines-between': 'always'
         }
       ],
