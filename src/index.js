@@ -1,2 +1,2 @@
-import './js/swiper.js'
+// import './js/swiper.js'
 import './styles/style.scss'
