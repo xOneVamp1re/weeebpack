@@ -40,6 +40,7 @@ module.exports = (env) => {
       rules: [
         {
           test: /\.js$/,
+
           include: path.resolve(__dirname, 'src/js'),
           exclude: /node_modules/,
           use: {
@@ -75,16 +76,18 @@ module.exports = (env) => {
         {
           test: /\.(png|jpg|jpeg|gif|webp)$/i,
           type: 'asset/resource'
-        },
+         
 
         {
           test: /\.svg$/,
           type: 'asset/resource'
+       
         },
 
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource'
+       
         },
 
         {

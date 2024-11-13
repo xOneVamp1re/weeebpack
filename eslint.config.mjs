@@ -23,15 +23,15 @@ export default [
   ...fixupConfigRules(
     compat.extends(
       'eslint:recommended',
+      'plugin:prettier/recommended',
       'plugin:import/errors',
-      'plugin:import/warnings',
-      'plugin:prettier/recommended'
+      'plugin:import/warnings'
     )
   ),
   {
     plugins: {
-      import: fixupPluginRules(_import),
-      prettier: fixupPluginRules(prettier)
+      prettier: fixupPluginRules(prettier),
+      import: fixupPluginRules(_import)
     },
 
     languageOptions: {
